@@ -1,9 +1,10 @@
-﻿using FriendOrganizer.Model;
+﻿using FriendOrganizer.Core.Entities;
+using FriendOrganizer.Core.Interfaces;
 using System.Collections.Generic;
 
-namespace FriendOrganizer.UI.Data
+namespace FriendOrganizer.Infrastructure.Repositories
 {
-    public class FriendDataService : IFriendDataService
+    public class FriendRepository : IFriendRepository
     {
         public IEnumerable<Friend> GetAll()
         {

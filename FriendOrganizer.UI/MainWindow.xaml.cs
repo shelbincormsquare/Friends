@@ -1,4 +1,4 @@
-﻿using FriendOrganizer.UI.ViewModel;
+﻿using FriendOrganizer.UI.ViewModels;
 using System.Windows;
 
 namespace FriendOrganizer.UI

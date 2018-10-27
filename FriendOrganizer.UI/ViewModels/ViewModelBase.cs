@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace FriendOrganizer.UI.ViewModel
+namespace FriendOrganizer.UI.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

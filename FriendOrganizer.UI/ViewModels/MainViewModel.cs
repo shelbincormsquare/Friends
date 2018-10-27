@@ -1,29 +1,24 @@
-﻿using FriendOrganizer.Model;
-using FriendOrganizer.UI.Data;
-using System;
-using System.Collections.Generic;
+﻿using FriendOrganizer.Core.Entities;
+using FriendOrganizer.Core.Interfaces;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FriendOrganizer.UI.ViewModel
+namespace FriendOrganizer.UI.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private IFriendDataService _friendDataService;
+        private IFriendRepository _friendRepository;
         private Friend _selectedFriend;
          
 
-        public MainViewModel(IFriendDataService friendDataService)
+        public MainViewModel(IFriendRepository friendRepository)
         {
             Friends = new ObservableCollection<Friend>(); ;
-            _friendDataService = friendDataService;
+            _friendRepository = friendRepository;
         }
 
         public void Load()
         {
-            var friends = _friendDataService.GetAll();
+            var friends = _friendRepository.GetAll();
             Friends.Clear();
             foreach (var friend in friends)
             {
