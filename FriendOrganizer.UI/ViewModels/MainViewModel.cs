@@ -1,6 +1,7 @@
 ﻿using FriendOrganizer.Core.Entities;
 using FriendOrganizer.Core.Interfaces;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace FriendOrganizer.UI.ViewModels
 {
@@ -8,7 +9,7 @@ namespace FriendOrganizer.UI.ViewModels
     {
         private IFriendRepository _friendRepository;
         private Friend _selectedFriend;
-         
+
 
         public MainViewModel(IFriendRepository friendRepository)
         {
@@ -16,9 +17,9 @@ namespace FriendOrganizer.UI.ViewModels
             _friendRepository = friendRepository;
         }
 
-        public void Load()
+        public async Task LoadAsync()
         {
-            var friends = _friendRepository.GetAll();
+            var friends = await _friendRepository.GetAllAsync();
             Friends.Clear();
             foreach (var friend in friends)
             {
@@ -38,6 +39,6 @@ namespace FriendOrganizer.UI.ViewModels
             }
         }
 
-     
+
     }
 }

@@ -1,18 +1,26 @@
 ﻿using FriendOrganizer.Core.Entities;
 using FriendOrganizer.Core.Interfaces;
 using FriendOrganizer.Infrastructure.Persistence;
+using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace FriendOrganizer.Infrastructure.Repositories
 {
     public class FriendRepository : IFriendRepository
     {
-        public IEnumerable<Friend> GetAll()
+        private Func<FriendOrganizerDbContext> _contextCreator;
+
+        public FriendRepository(Func<FriendOrganizerDbContext> contextCreator)
         {
-            using (var ctx = new FriendOrganizerDbContext())
+            _contextCreator = contextCreator;
+        }
+        public async Task<IEnumerable<Friend>> GetAllAsync()
+        {
+            using (var ctx = _contextCreator())
             {
-                return ctx.Friends.AsNoTracking().ToList();
+                return await ctx.Friends.AsNoTracking().ToListAsync();
             }
         }
     }
