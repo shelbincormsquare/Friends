@@ -6,5 +6,6 @@ namespace FriendOrganizer.Core.Interfaces
     public interface IFriendRepository
     {
         Task<Friend> GetByIdAsync(int friendId);
+        Task SaveAsync(Friend friend);
     }
 }

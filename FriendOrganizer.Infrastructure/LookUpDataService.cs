@@ -25,7 +25,7 @@ namespace FriendOrganizer.Infrastructure
                         .Select(f => new LookupItem
                         {
                             Id = f.Id,
-                            DisplayMember = f.FirstName
+                            DisplayMember = f.FirstName + " " + f.LastName
                         }).ToListAsync();
             }
         }

@@ -68,12 +68,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Events\AfterFriendSavedEvent.cs" />
+    <Compile Include="Events\AfterFriendSavedEventArgs.cs" />
     <Compile Include="Events\OpenFriendDetailViewEvent.cs" />
     <Compile Include="StartUp\Bootstrapper.cs" />
     <Compile Include="ViewModels\FriendDetailViewModel.cs" />
     <Compile Include="ViewModels\IFriendDetailViewModel.cs" />
     <Compile Include="ViewModels\INavigationViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NavigationItemViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\FriendDetialView.xaml.cs">
