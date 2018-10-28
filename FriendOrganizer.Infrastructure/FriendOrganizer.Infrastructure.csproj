@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IFriendLookupDataService.cs" />
+    <Compile Include="LookupDataService.cs" />
     <Compile Include="Migrations\201810280241486_InitialDb.cs" />
     <Compile Include="Migrations\201810280241486_InitialDb.Designer.cs">
       <DependentUpon>201810280241486_InitialDb.cs</DependentUpon>
